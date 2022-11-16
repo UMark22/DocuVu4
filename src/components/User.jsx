@@ -14,31 +14,57 @@ import { AiOutlineLeft } from "react-icons/ai";
 import { RiUserAddLine } from "react-icons/ri";
 
 //Sample Json data of Department Users
-var data = [
-  { id: "1", Name: "Charlie Tuplano", requestBy: "Mary Diane Villamor" },
+
+//Sample Departments
+var departments = [
+  {
+    id: "1",
+    Name: [
+      "Charlie Tuplano",
+      "Jeyllou Maru",
+      "Mark Joseph Rubio",
+      "Mark Jason Antipala",
+    ],
+    Department: "IT",
+    requestBy: "Mary Diane Villamor",
+  },
   {
     id: "2",
-    Name: "Jeyllou Maru",
+    Name: [
+      "Charlie Tuplano",
+      "Jeyllou Maru",
+      "Mark Joseph Rubio",
+      "Mark Jason Antipala",
+    ],
+    Department: "Sales",
     requestBy: "Nancy Mabagos",
   },
   {
     id: "3",
-    Name: "Mark Joseph Rubio",
+    Name: [
+      "Charlie Tuplano",
+      "Jeyllou Maru",
+      "Mark Joseph Rubio",
+      "Mark Jason Antipala",
+    ],
+    Department: "Admin",
     requestBy: "Neil Morales",
   },
   {
-    id: "4",
-    Name: "Mark Jason G. Antipala",
-    requestBy: "Mary Diane Villamor",
-  },
-  {
-    id: "5",
-    Name: "Joaqiuin Sanggano",
+    id: "3",
+    Name: [
+      "Charlie Tuplano",
+      "Jeyllou Maru",
+      "Mark Joseph Rubio",
+      "Mark Jason Antipala",
+    ],
+    Department: "Production",
     requestBy: "Nancy Mabagos",
   },
 ];
 
 const User = () => {
+  console.log(departments);
   // const [showUserModal, setShowUserModal] = useState(false);
   // const handleClose = () => setShowUserModal(false);
   const [users, setUsers] = useState([]);
@@ -265,151 +291,78 @@ const User = () => {
                 </div>
               </button>
               <table className="w-full">
-                <thead className="bg-gray-100 border-b ">
-                  <tr className=" text-left ">
-                    <th
-                      scope="col"
-                      className="text-sm font-semibold text-gray-900 px-3 py-3 "
-                    >
-                      Department
-                    </th>
-                    <th
-                      scope="col"
-                      className="text-sm font-semibold text-gray-900 px-3 py-3 "
-                    ></th>
-                  </tr>
-                </thead>
-                <tbody className="">
-                  <tr className="text-left border p-2 ">
-                    <td className=" p-3 text-sm text-gray-700 whitespace-nowrap">
-                      Admin
-                    </td>
-                    <td className=" p-3 text-sm text-gray-700 whitespace-nowrap">
-                      <div className=" flex justify-end  ">
-                        <div className="dropdown inline-block relative">
-                          <div className="bg-gray-200 text-gray-700 cursor-pointer font-semibold py-2 px-4 rounded inline-flex items-center mr-6">
-                            <span className="mr-1 text-[12px]">
-                              <AiOutlineLeft />
-                            </span>
-                          </div>
-
-                          <div className="border border-gray-300 dropdown-menu absolute hidden text-gray-700 pt-1 w-[280px] h-[300px] -ml-[285px] -mt-[30px] rounded-md">
-                            <div className="bg-white w-full h-full ">
-                              <div className="flex w-full">
-                                <div className="md:w-1/6 mt-7 ml-3">
-                                  <label className="block mb-1 md:mb-0">
-                                    Members
-                                  </label>
+                <div className="w-[540px] h-[460px]  scrollbar-thin  scrollbar-thumb-gray-400 scrollbar-track-gray-300 overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
+                  <thead className="bg-gray-100 border-b ">
+                    <tr className=" text-left ">
+                      <th
+                        scope="col"
+                        className="text-sm font-semibold text-gray-900 px-3 py-3  w-[500px] "
+                      >
+                        Department
+                      </th>
+                      <th
+                        scope="col"
+                        className="text-sm font-semibold text-gray-900 px-3 py-3  w-[200px]"
+                      ></th>
+                    </tr>
+                  </thead>
+                  <tbody className="">
+                    {departments.map((department, index) => {
+                      return (
+                        <tr className="text-left border p-2 " key={index}>
+                          <td className=" p-3 text-sm text-gray-700 whitespace-nowrap">
+                            {department.Department}
+                          </td>
+                          <td className=" p-3 text-sm text-gray-700 whitespace-nowrap">
+                            <div className=" flex justify-end  ">
+                              <div className="dropdown inline-block relative">
+                                <div className="bg-gray-200 text-gray-700 cursor-pointer font-semibold py-2 px-4 rounded inline-flex items-center mr-6">
+                                  <span className="mr-1 text-[12px]">
+                                    <AiOutlineLeft />
+                                  </span>
                                 </div>
-                                <div className=" ml-[12%] mt-5 w-[60%] h-[200px]  text-[11px] shadow-inner overflow-y-auto overflow-auto scrollbar-hide md:scrollbar-default">
-                                  {data && data.length > 0
-                                    ? data.map((data, index) => {
-                                        return (
-                                          <ul key={index} className="mt-2 ml-2">
-                                            <li>{data.Name}</li>
-                                          </ul>
-                                        );
-                                      })
-                                    : "No Data"}
-                                </div>
-                              </div>
 
-                              <div className="flex w-full mt-10 ml-5">
-                                <Link to={`/user/viewdepartment`}>
-                                  <button className="text-green-600 mr-2">
-                                    <FaUserEdit className="w-[20px] h-[15px]" />
-                                  </button>
-                                </Link>
+                                <div className="border border-gray-300 dropdown-menu absolute hidden text-gray-700 pt-1 w-[280px] h-[300px] -ml-[285px] -mt-[30px] rounded-md">
+                                  <div className="bg-white w-full h-full ">
+                                    <div className="flex w-full">
+                                      <div className="md:w-1/6 mt-7 ml-3">
+                                        <label className="block mb-1 md:mb-0">
+                                          Members
+                                        </label>
+                                      </div>
+
+                                      <div className=" ml-[12%] mt-5 w-[60%] h-[200px]  text-[11px] shadow-inner overflow-y-auto overflow-auto scrollbar-hide md:scrollbar-default">
+                                        <li>Charlie Tuplano</li>
+                                        <li>Jeyllou Maru</li>
+                                        <li>Mark Joseph Rubio</li>
+                                        <li>Mark Jason G. Antipala</li>
+
+                                        {/* {console.log(department.Name)}
+                                      <ul>
+                                        {departments.map((item) => (
+                                          <li>{item.Name} </li>
+                                        ))}
+                                      </ul> */}
+                                      </div>
+                                    </div>
+
+                                    <div className="flex w-full mt-10 ml-5">
+                                      <Link to={`/user/viewdepartment`}>
+                                        <button className="text-green-600 mr-2">
+                                          <FaUserEdit className="w-[20px] h-[15px]" />
+                                        </button>
+                                      </Link>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="text-left border p-2 ">
-                    <td className=" p-3 text-sm text-gray-700 whitespace-nowrap">
-                      Sales
-                    </td>
-                    <td className=" p-3 text-sm text-gray-700 whitespace-nowrap">
-                      <div className=" flex justify-end  ">
-                        <div className="dropdown inline-block relative">
-                          <div className="bg-gray-200 text-gray-700 cursor-pointer font-semibold py-2 px-4 rounded inline-flex items-center mr-6">
-                            <span className="mr-1 text-[12px]">
-                              <AiOutlineLeft />
-                            </span>
-                          </div>
-
-                          <div className="border border-gray-300 dropdown-menu absolute hidden text-gray-700 pt-1 w-[280px] h-[300px] -ml-[285px] -mt-[30px] rounded-md">
-                            <div className="bg-white w-full h-full ">
-                              <div className="flex w-full">
-                                <div className="md:w-1/6 mt-7 ml-5">
-                                  <label className="block mb-1 md:mb-0">
-                                    Members
-                                  </label>
-                                </div>
-                                <div className=" ml-[12%] mt-5 w-[60%] h-[200px]  text-[11px] shadow-inner overflow-y-auto overflow-auto scrollbar-hide md:scrollbar-default">
-                                  <ul className="mt-2 ml-2">
-                                    <li>Prince Amarante</li>
-                                    <li>Choller Perida</li>
-                                  </ul>
-                                </div>
-                              </div>
-
-                              <div className="flex w-full mt-10 ml-5">
-                                <button className="text-green-600 mr-2">
-                                  <FaUserEdit className="w-[20px] h-[15px]" />
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr className="text-left border p-2 ">
-                    <td className=" p-3 text-sm text-gray-700 whitespace-nowrap">
-                      IT
-                    </td>
-                    <td className=" p-3 text-sm text-gray-700 whitespace-nowrap">
-                      <div className=" flex justify-end  ">
-                        <div className="dropdown inline-block relative">
-                          <div className="bg-gray-200 text-gray-700 cursor-pointer font-semibold py-2 px-4 rounded inline-flex items-center mr-6">
-                            <span className="mr-1 text-[12px]">
-                              <AiOutlineLeft />
-                            </span>
-                          </div>
-
-                          <div className="border border-gray-300 dropdown-menu absolute hidden text-gray-700 pt-1 w-[280px] h-[300px] -ml-[285px] -mt-[30px] rounded-md">
-                            <div className="bg-white w-full h-full ">
-                              <div className="flex w-full">
-                                <div className="md:w-1/6 mt-7 ml-5">
-                                  <label className="block mb-1 md:mb-0">
-                                    Members
-                                  </label>
-                                </div>
-                                <div className=" ml-[12%] mt-5 w-[60%] h-[200px]  text-[11px] shadow-inner overflow-y-auto overflow-auto scrollbar-hide md:scrollbar-default">
-                                  <ul className="mt-2 ml-2">
-                                    <li>Charlie Tuplano</li>
-                                    <li>Jeyllou Maru</li>
-                                    <li>Mark Joseph Rubio</li>
-                                    <li>Mark Jason Antipala</li>
-                                  </ul>
-                                </div>
-                              </div>
-
-                              <div className="flex w-full mt-10 ml-5">
-                                <button className="text-green-600 mr-2">
-                                  <FaUserEdit className="w-[20px] h-[15px]" />
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </div>
               </table>
             </div>
           </div>

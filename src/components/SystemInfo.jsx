@@ -2,9 +2,9 @@ import React from "react";
 
 const SystemInfo = () => {
   return (
-    <div className="h-auto w-[20rem] bg-white p-4 rounded-xl shadow-md flex flex-col gap-4 duration-100">
+    <div className="h-auto w-full bg-white p-4 rounded-xl shadow-md flex flex-col gap-4">
       <strong className="text-black font-bold">System Information</strong>
-      <table className="mt-3 w-full flex-1">
+      <table className="mt-3 w-[18rem] flex-1">
         <tr>
           <td className="xl:text-sm text-black font-semibold">Host Name</td>
           <td className="xl:text-sm text-black pl-3 pr-3">
