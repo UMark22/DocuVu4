@@ -52,7 +52,7 @@ const NoUploads = () => {
   return (
     <div className="h-auto w-full bg-white p-4 rounded-xl shadow-md flex flex-col gap-4">
       <strong className="text-gray-700 font-medium">No. of Uploads</strong>
-      <div className="mt-3 w-[22rem] h-[20rem] text-xs">
+      <div className="mt-3 w-[95%] h-full text-xs">
         <ResponsiveContainer>
           <LineChart
             width={500}

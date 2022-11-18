@@ -6,17 +6,17 @@ import NoUsage from "../components/NoUsage";
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-col gap-2 overflow-hidden">
+    <div className="flex flex-col gap-4">
       <div className="text-lg ml-2 font-normal">
         <h1>Dashboard</h1>
       </div>
       <DashboardDocuVuStorage />
-      <div className="flex flex-row gap-4">
-        <SystemInfo />
-        <NoUploads />
-        <NoUsage />
-      </div>
-    </div>
+        <div className="flex flex-row gap-4">
+          <SystemInfo />
+          <NoUploads />
+          <NoUsage />
+        </div>
+  </div>
   );
 };
 

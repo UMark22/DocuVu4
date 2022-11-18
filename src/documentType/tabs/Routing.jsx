@@ -1,6 +1,6 @@
 import React from 'react'
-import { RiDeleteBin5Line } from 'react-icons/ri';
-import { HiUserAdd } from 'react-icons/hi';
+import { HiTrash } from 'react-icons/hi'
+import { AiOutlineUserAdd } from 'react-icons/ai';
 const Routing = () => {
   return (
     <>
@@ -66,11 +66,19 @@ const Routing = () => {
                             </select>
                         </td>
                         <td>
-                            <button type='submit' id='addApprover' className='pt-3'>
-                                <HiUserAdd className='text-[#0972B8] w-10 h-5' />
+                            <button type='submit' 
+                                    id='addApprover' 
+                                    className='pt-3'
+                                    onClick={() => alert('Add Routing')}
+                            >
+                                    <AiOutlineUserAdd size={20} className='text-[#0972B8]' />
                             </button>
-                            <button type='submit' id='dltApprover' className='pt-3'>
-                                <RiDeleteBin5Line className='text-red-600 w-10 h-5' />
+                            <button type='submit' 
+                                    id='dltApprover' 
+                                    className='pt-3'
+                                    onClick={() => alert('Delete Routing')}
+                            >
+                                    <HiTrash size={20} className='text-red-600' />
                             </button>
                             
                         </td>

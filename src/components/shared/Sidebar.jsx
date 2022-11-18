@@ -29,6 +29,7 @@ const Sidebar = () => {
       src: <FiSettings />,
       gap: true,
       submenu: true,
+      subIcon: <BsChevronDown />,
       submenuItems: [
         {
           title: "User",
@@ -49,6 +50,7 @@ const Sidebar = () => {
       src: <TfiFiles />,
       gap: true,
       submenu: true,
+      subIcon: <BsChevronDown />,
       submenuItems: [
         {
           title: "Audit Trail",
@@ -86,17 +88,15 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className={`bg-[#0972B8] shadow-xl  ${
-          !toOpen ? "w-60" : "w-[4.5rem]"
-        } duration-300`}
+        className={`bg-[#0972B8] ${!toOpen ? "w-60" : "w-16"} duration-300`}
       >
         <div
           className={`bg-white p-[0.47rem] flex flex-col relative duration-300`}
         >
           {/* Session for Top part */}
           <div className="flex-none items-center gap-2 px-5 py-5 duration-300">
-            <GiHamburgerMenu
-              size={25}
+           <GiHamburgerMenu
+            size={25}
               className={`absolute -right-8 top-4 w-7 text-black border border-gray-500 duration-300 cursor-pointer `}
               onClick={() => setOpen(!toOpen)}
             />
@@ -124,58 +124,53 @@ const Sidebar = () => {
                 <li
                   key={index}
                   className={`${
-                    active === index && "bg-gray-400"
-                  } duration-200 text-white text-sm flex items-center gap-x-4 cursor-pointer p-2
-                                    ${menu.gap ? "mt-3.5" : "mt-2"}`}
+                    active === index && "bg-gray-600"
+                  } duration-800 text-white flex items-center gap-x-4 cursor-pointer p-2
+                                    ${menu.gap ? "mt-7" : "mt-2"}`}
                   onClick={() => setActive(index)}
                 >
                   <Link to={menu?.path} key={index}>
                     <div
                       className={`duration-800 ${
-                        !toOpen ? "w-60" : "w-[4.5rem]"
+                        !toOpen ? "w-60" : "w-16"
                       }`}
                     >
                       <span className="text-xl block float-left ml-5 ">
                         {menu.src}
                       </span>
                       <span
-                        className={`text-sm font-extralight flex-1 ml-2 duration-300 ${
+                        className={`text-sm font-extralight flex-1 ml-2 duration-500 ${
                           toOpen && "hidden"
                         } `}
                       >
                         {menu.title}
                       </span>
                       <span
-                        className={`float-right ${
+                        className={` float-right ${
                           toOpen ? "mr-8" : "mr-5"
-                        } text-white`}
+                        } text-white  duration-800`}
+                        onClick={() => {
+                          setCurrentMenu(menu.title);
+                          setSubmenuOpen(!submenuOpen)
+                        
+                        }}
                       >
                         {menu.submenu && !toOpen && (
-                          <BsChevronDown
-                            className={`${
-                              submenuOpen && "rotate-180"
-                            } duration-800`}
-                            onClick={() => {
-                              setCurrentMenu(menu.title);
-                              setSubmenuOpen(!submenuOpen);
-                            }}
-                          />
+                            (menu.subIcon)
                         )}
                       </span>
                     </div>
                   </Link>
                 </li>
-                {menu.submenu &&
-                  submenuOpen &&
-                  currentMenu === menu.title &&
-                  !toOpen && (
-                    <ul className="mt-2">
-                      {menu.submenuItems.map((submenuItem, index) => (
+                {menu.submenu && submenuOpen && currentMenu === menu.title  && !toOpen && (
+                  <ul className="mt-2">
+                   {menu.submenuItems.map((submenuItem, index) => {
+                      return(
                         <li
                           key={index}
                           className={`
-                        hover:bg-gray-400 text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 px-5
-                        `}
+                          hover:bg-gray-400 text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 px-5
+                          `} 
                         >
                           <Link to={submenuItem?.path} key={index}>
                             <div className="w-60">
@@ -187,18 +182,19 @@ const Sidebar = () => {
                                 {submenuItem.src}
                               </span>
                               <span
-                                className={`text-sm font-extralight flex-1 duration-200 ml-2 ${
+                                className={`text-sm font-extralight flex-1 duration-500 ml-2 ${
                                   toOpen && "hidden"
                                 } `}
                               >
-                                {submenuItem.title}
-                              </span>
-                            </div>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                              {submenuItem.title}
+                            </span>
+                          </div>
+                        </Link>
+                      </li>
+                      );
+                   })}
+                  </ul>
+                )}
               </>
             ))}
           </ul>

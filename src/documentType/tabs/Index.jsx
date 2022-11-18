@@ -1,121 +1,70 @@
-import React from 'react';
-import { useState } from 'react';
+import { useState } from "react"
+import TableRows from "./TableRows"
+import { AiOutlineFolderAdd } from 'react-icons/ai';
+
+function Index(){
 
 
-const Index = () => {
-    const state = {
-        rows:[{}]
-    };
-    handleChange = idx => e =>{
-        const { name, value } = e.target;
-
-        console.log( name, value );
-
-        const rows = [...this.state.rows];
-        rows[idx] = {
-            ...rows[idx],
-            [name] : value
-        };
-        this.setState({
-            rows
-        });
-    };
-
-    handleChangeEmail = idx => e =>{
-        const { name, value } = e.target;
-
-        console.log( name, value );
-
-        const rows = [...this.state.rows];
-        rows[idx] = {
-            ...rows[idx],
-            email: value
-        };
-        this.setState({
-
-        });
-    };
-
-    handleAddRow = () => {
-        const item = {
-            email: "",
-            mobile:""
-        };
-        this.setState({
-            rows: [...this.state.rows, item]
-        });
-    };
-
-    handleRemoveRow = () => {
-        this.setState({
-            rows: this.state.rows.slice(0, -1)
-        });
-    };
-    handleRemoveSpecificRow = idx => () =>{
-        const rows = [...this.state.rows];
-        rows.splice(idx, 1);
-        this.setState({rows});
-    };
-
+    const [rowsData, setRowsData] = useState([]);
+ 
+    const addTableRows = ()=>{
+  
+        const rowsInput={
+            columnName:'',
+            dataType:'',
+            length:'',
+            sequence:''
+        } 
+        setRowsData([...rowsData, rowsInput])
+      
+    }
+   const deleteTableRows = (index)=>{
+        const rows = [...rowsData];
+        rows.splice(index, 1);
+        setRowsData(rows);
+   }
+ 
+   const handleChange = (index, evnt)=>{
+    
+    const { name, value } = evnt.target;
+    const rowsInput = [...rowsData];
+    rowsInput[index][name] = value;
+    setRowsData(rowsInput);
+  
+ 
+ 
+}
     return(
-        <>
-            <div>
-                <div className='container'>
-                    <div className='row clearfix'>
-                        <div className='col-md-12 column'>
-                            <table className='table table-bordered table-hover' id='tab_logic'>
-                                <thead>
-                                    <tr>
-                                        <th className='text-center'>ID</th>
-                                        <th className='text-center'>Name</th>
-                                        <th className='text-center'>Mobile</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {this.state.rows.map((item,idx) =>(
-                                        <tr className='addr0' key={idx}>
-                                            <td>{idx}</td>
-                                            <td>
-                                                <input 
-                                                    type='text'
-                                                    name='email'
-                                                    value={this.state.row[idx].email}
-                                                    onChange={this.handleChangeEmail(idx)}
-                                                    className="form-control"
-                                                />
-                                            </td>
-                                            <td>
-                                                <input 
-                                                        type='text'
-                                                        name='mobile'
-                                                        value={this.state.row[idx].email}
-                                                        onChange={this.handleChange(idx)}
-                                                        className="form-control"
-                                                    />
-                                            </td>
-                                            <td>
-                                                <button
-                                                    className='btn btn-outline-danger btn-sm'
-                                                    onClick={this.handleRemoveSpecificRow(idx)}
-                                                >
-                                                   Remove         
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))};
-                                </tbody>
-                            </table>
-                            <button
-                                className='btn btn-primary'
-                                onClick={this.handleAddRow}
+        <div className="">
+            <div className="">
+                <div className="flex justify-center">
+                <table class="border-separate border-spacing-2 border-0">
+                    <thead className="uppercase text-[13px] ">
+                        <tr>
+                        <th class="">ID</th>
+                        <th class="">Column Name</th>
+                        <th class="">DataType</th>
+                        <th class="">Length</th>
+                        <th class=".">Sequence</th>
+                        <th class="">Display</th>
+                        <th className="w-5">
+                            <button 
+                                className="btn btn-outline-success" 
+                                onClick={addTableRows} 
                             >
-                                Add Rw
+                                <AiOutlineFolderAdd size={25} className='text-[#0972B8]' />
                             </button>
-                        </div>
-                    </div>
+                        </th>
+                        </tr>
+                    </thead>
+                   <tbody>
+                    <TableRows rowsData={rowsData} deleteTableRows={deleteTableRows} handleChange={handleChange} />
+                   </tbody> 
+                </table>
                 </div>
             </div>
-        </>
-    ) 
+        </div>
+    )
+
 }
 export default Index;

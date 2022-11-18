@@ -5,10 +5,10 @@ const SelectBulkUpload = () => {
         <div className='flex flex-col gap-4 justify-start bg-gray-200 rounded-xl shadow-xl border-0 h-full w-full p-2'>
             <h1 className='text-black text-[12px] italic p-2'>File Formats zip, jpg, png, gif, bmp</h1>
             <div className='flex flex-row gap-4'>
-                <div className='relative'>
+                <div className='relative w-full'>
                     <form>
                         <label htmlFor="fileUpload"
-                              className='block h-12 w-[40rem] pt-3 rounded-sm border-dotted border-2 border-gray-500 bg-transparent text-center mb-2'
+                              className='block h-12 w-full pt-3 rounded-sm border-dotted border-2 border-gray-500 bg-transparent text-center mb-2'
                         >
                             Drop files here
                         </label>

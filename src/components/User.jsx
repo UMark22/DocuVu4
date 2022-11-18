@@ -296,7 +296,7 @@ const User = () => {
                     <tr className=" text-left ">
                       <th
                         scope="col"
-                        className="text-sm font-semibold text-gray-900 px-3 py-3  w-[500px] "
+                        className="text-sm font-semibold text-gray-900 px-3 py-3  w-[300px] "
                       >
                         Department
                       </th>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { BsCloudUpload } from "react-icons/bs";
+import { RiRouteLine } from "react-icons/ri";
 import { FiLink } from "react-icons/fi";
 import { RiArrowGoBackLine } from "react-icons/ri";
 
@@ -9,9 +10,9 @@ const UploadScanFile = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-4 bg-white w-full h-[33rem] rounded-xl shadow-lg border p-4">
+      <div className="flex flex-col gap-4 bg-white w-full rounded-xl shadow-lg border p-4">
         <div className="lg:flex lg:flex-row lg:gap-4 xl:flex xl:flex-row xl:gap-4 md:flex md:flex-col md:gap-4 sm:flex sm:flex-col sm:gap-4 xsm:flex xsm:flex-col xsm:gap-4 px-4">
-          <div className="rounded-xl shadow-lg border bg-white h-full w-[40%] xl:w-[40%] lg:w-[40%] md:w-full sm:w-full p-4">
+          <div className="bg-gray-100 rounded-xl shadow-lg border h-full w-[40%] xl:w-[40%] lg:w-[40%] md:w-full sm:w-full p-4">
             <div className="flex flex-row justify-start gap-2">
               <div className="flex justify-center w-[45px] h-[40px] -ml-1 -mt-1 mb-4 bg-gray-200 rounded-lg">
                 <button
@@ -31,12 +32,12 @@ const UploadScanFile = () => {
                   DOCTYPE
                 </span>
               </div>
-              <div>
+              <div className="w-full">
                 <input
                   type="text"
                   id="uploadDoctype"
                   placeholder="DocuType"
-                  className="w-[14rem] h-8 rounded-sm border-2 border-gray-400 px-2 text-sm outline-0"
+                  className="w-full h-8 rounded-sm border-2 border-gray-400 px-2 text-sm outline-0"
                 />
               </div>
             </div>
@@ -48,7 +49,7 @@ const UploadScanFile = () => {
               </div>
             </div>
             <div lassName="flex flex-row gap-4 p-3">
-              <table className="table-auto">
+              <table className="table-auto w-full">
                 <tbody>
                   <tr>
                     <td className="px-5 py-3">
@@ -59,7 +60,7 @@ const UploadScanFile = () => {
                         type="text"
                         id="uploadDoctype"
                         placeholder="Text"
-                        className="w-[14rem] h-8 rounded-sm border-2 border-gray-400 px-2 text-sm outline-0"
+                        className="w-full h-8 rounded-sm border-2 border-gray-400 px-2 text-sm outline-0"
                       />
                     </td>
                   </tr>
@@ -72,7 +73,7 @@ const UploadScanFile = () => {
                         type="text"
                         id="uploadDoctype"
                         placeholder="Text"
-                        className="w-[14rem] h-8 rounded-sm border-2 border-gray-400 px-2 text-sm outline-0"
+                        className="w-full h-8 rounded-sm border-2 border-gray-400 px-2 text-sm outline-0"
                       />
                     </td>
                   </tr>
@@ -85,7 +86,7 @@ const UploadScanFile = () => {
                         type="text"
                         id="uploadDoctype"
                         placeholder="Text"
-                        className="w-[14rem] h-8 rounded-sm border-2 border-gray-400 px-2 text-sm outline-0"
+                        className="w-full h-8 rounded-sm border-2 border-gray-400 px-2 text-sm outline-0"
                       />
                     </td>
                   </tr>
@@ -95,12 +96,12 @@ const UploadScanFile = () => {
             <div className="flex flex-row gap-4 justify-center">
               <div className="dropdown inline-block relative  pt-3 pb-5">
                 <div className="">
-                  <FiLink
-                    size={20}
+                  <RiRouteLine
+                    size={25}
                     className="text-white text-sm sm:absolute sm:top-[45%] sm:left-[7%] -translate-y-1/2"
                   />
                   <h1 className="text-center pt-2 rounded-lg h-10 w-[10rem] border-[1px] border-[#0972B8] bg-[#0972B8] text-white text-sm">
-                    Send
+                    Route
                   </h1>
                 </div>
                 <div className="origin-top-right z-10 dropdown-menu absolute hidden  border-2 border-gray-400 text-black pt-1 w-[300px] h-auto ml-[10rem] -mt-28">
@@ -153,7 +154,7 @@ const UploadScanFile = () => {
           </div>
           <div className="2xl:w-[75%] xl:w-[75%]  lg:w-[75%] md:w-full xmd:w-[95%] sm:w-[88%] xsm:w-[70%]">
             <div className="flex flex-row gap-4 bg-gray-400 rounded-xl shadow-xl border-0 h-full justify-center ">
-              <h1 className="font-semibold text-sm p-2">View FIleUpload</h1>
+              <h1 className="font-semibold text-sm p-2">View FileUpload</h1>
             </div>
           </div>
         </div>

@@ -152,7 +152,7 @@ const MyInboxTable = () => {
 															<button type='submit'
 																	id='machineConnectivity'
 																	className='pr-2 rounded-lg h-10 w-full border-[1px] border-red-400 bg-red-400 text-white text-sm' 
-																	onClick={() => navigate("/documents/machineconnectivity")}
+																	onClick={() => navigate("/documents/viewscan")}
 															>
 																	<BsDiagram2 size={25} className='text-white text-sm sm:absolute sm:top-[45%] sm:left-[7%] -translate-y-1/2' />
 																	Scan

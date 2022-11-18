@@ -1,20 +1,27 @@
 import React from 'react'
+import { AiOutlineUserAdd } from 'react-icons/ai';
+import { HiTrash } from 'react-icons/hi'
 
 const Details = () => {
   return (
     <>
-        <div className='flex flex-row gap-4 justify-between w-full h-10 pt-1 px-3 mb-2 bg-gray-300 shadow-xl rounded-lg shadow-gray-700/50'>
+        <div className='flex flex-row gap-4 justify-between w-full h-10 pt-1 px-3 mb-2 bg-gray-300  shadow-md rounded-lg shadow-gray-700/50'>
             <div>
                 <label className='text-[12px] text-[#367FA9]font-bold'>AUSER-3</label>
             </div>
                 <div>
                     <button type='submit'
-                        className='rounded-2xl w-24 h-8 border-2 border-[#0972B8] bg-[#0972B8] text-white text-[12px]'>
-                        Add Child
+                            id='btnAddchild'
+                            className=''
+                            onClick={() => alert("Add Child")}
+                    >
+                            <AiOutlineUserAdd size={30} className='text-[#0972B8] text-[12px]' />
                     </button>
                     <button type='submit'
-                        className='mr-2 ml-2 rounded-2xl w-24 h-8 border-2 border-red-700 bg-red-700 text-white text-[12px]'>
-                        Delete
+                            className=''
+                            onClick={() => alert("Delete Child")}
+                    >
+                            <HiTrash size={30} className='ml-2 text-red-700 text-[12px]' />
                     </button>
                 </div>
             </div>
@@ -26,8 +33,10 @@ const Details = () => {
                 </div>  
                 <div className='flex flex-row  gap-4'>
                     <span className='text-gray-600 text-[11px] font-semibold w-44'>Document Type</span>
-                    <input type='text' id='docuType' value="AUSER-3"
-                        className='text-gray-600 text-[11px] font-semibold rounded-sm border-[1px] focus:bg-[#3C8DBC] focus:border-gray-700 border-gray-400 outline-0 h-6 px-2' 
+                    <input type='text' 
+                            id='docuType' 
+                            value="AUSER-3"
+                            className='text-gray-600 text-[11px] font-semibold rounded-sm border-[1px] focus:bg-[#3C8DBC] focus:border-gray-700 border-gray-400 outline-0 h-6 px-2' 
                     />
                 </div>  
                 <div className='flex flex-row  gap-4'>
