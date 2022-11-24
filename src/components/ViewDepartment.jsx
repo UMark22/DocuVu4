@@ -90,7 +90,7 @@ const ViewDepartment = () => {
 
   return (
     <>
-      <div className="px-10 mt-10 ml-[25%] bg-white w-[50%] h-[75%] shadow-2xl shadow-secondary-600 border rounded-lg">
+      <div className="px-10 mt-10 ml-[25%] bg-white w-[50%] h-[450px] shadow-2xl shadow-secondary-600 border rounded-lg">
         <div className="flex  ">
           <div className="flex justify-center w-[45px] h-[40px] -ml-8 mt-2  bg-gray-200  rounded-lg">
             <button

@@ -17,6 +17,8 @@ module.exports = {
     },
 
     screens: {
+      xsm: "360px",
+
       sm: "640px",
       // => @media (min-width: 640px) { ... }
 
@@ -31,6 +33,9 @@ module.exports = {
 
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
+    },
+    fontFamily: {
+      sans: ['"Barlow"', "sans-serif"],
     },
 
     //extend: {},

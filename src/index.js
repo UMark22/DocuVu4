@@ -35,6 +35,7 @@ import ViewScan from "./documents/viewing/ViewScan";
 import UploadScanFile from "./documents/viewing/UploadScanFile";
 
 import Header from "./components/shared/Header";
+// import Scan from "./scan/Scan";
 // import Products from './components/Products';
 
 // import { ToastContainer } from 'react-toastify';
@@ -45,8 +46,10 @@ root.render(
     {/* <ToastContainer /> */}
     <Router>
       <Routes>
+        {/* <Route path="/scan" element={<Scan />} /> */}
         <Route index element={<App />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
+
         <Route path="/manageaccount" element={<ManageAccount />} />
         <Route path="/" element={<Login />} />
 

@@ -31,13 +31,13 @@ const SingleUpload = () => {
               <input
                 type="file"
                 id="fileUpload"
-                className="block w-[20rem] h-10 p-2 hidden text-sm text-gray-900 bg-gray-400 rounded-md border border-gray-400 cursor-pointer"
+                className=" w-[20rem] h-10 p-2 hidden text-sm text-gray-900 bg-gray-400 rounded-md border border-gray-400 cursor-pointer"
               />
               <label
                 for="fileUpload"
-                className="block w-full h-10 p-2 text-sm text-gray-900 bg-gray-400 rounded-md border border-gray-400 cursor-pointe"
+                className=" cursor-pointer block w-full h-[35px] p-2 text-sm text-gray-900 bg-gray-200 rounded-md border border-gray-400 cursor-pointe"
               >
-                SELECT FILE
+                Select File
               </label>
             </div>
             <div className="flex flex-row gap-4 pt-10 justify-start">
@@ -67,7 +67,7 @@ const SingleUpload = () => {
                 <tbody>
                   <tr>
                     <td className="px-5 py-3">
-                      <span className="text-[13px]">PROJECS</span>
+                      <span className="text-[13px]">Project</span>
                     </td>
                     <td>
                       <input
@@ -80,7 +80,7 @@ const SingleUpload = () => {
                   </tr>
                   <tr>
                     <td className="px-5 py-3">
-                      <span className="text-[13px]">NAME</span>
+                      <span className="text-[13px]">Name</span>
                     </td>
                     <td>
                       <input
@@ -93,7 +93,7 @@ const SingleUpload = () => {
                   </tr>
                   <tr>
                     <td className="px-5 py-3">
-                      <span className="text-[13px]">DATE</span>
+                      <span className="text-[13px]">Date</span>
                     </td>
                     <td>
                       <input

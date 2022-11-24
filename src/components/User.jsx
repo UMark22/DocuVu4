@@ -125,12 +125,12 @@ const User = () => {
   };
 
   return (
-    <div className="">
+    <div className="flex col-auto  h-full bg-white overflow-hidden">
       <ToastContainer />
-      <div className="border h-[565px] w-full bg-white rounded-lg shadow-lg   ">
+      <div className="border  w-full bg-white overflow-hidden rounded-lg shadow-lg   ">
         <div className=" ">
-          <div className="flex justify-evenly ">
-            <div className=" h-[520px] mt-2">
+          <div className="flex  w-full  divide-x divide-slate-400/25 ">
+            <div className="p-4 w-full 2xl:w-full xl:w-full lg:w-full md:w-full xmd:w-[95%] sm:w-[88%] xsm:w-[70%]">
               <button
                 onClick={() => navigate("/user/addusers")}
                 className="mb-4 ml-2 mt-4 inline-block px-6 py-2 border-2 border-blue-600 bg-blue-200 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
@@ -140,25 +140,25 @@ const User = () => {
                   <span className="ml-6">New User</span>
                 </div>
               </button>
-              <table className="  mb-10 ">
-                <div className="w-[540px] h-[460px]  scrollbar-thin  scrollbar-thumb-gray-400 scrollbar-track-gray-300 overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
+              <div className="p-3 w-full h-[490px] lg:h-[470px] 2xl:w-full  scrollbar-thin  scrollbar-thumb-gray-400 scrollbar-track-gray-300 overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
+                <table className=" w-full ">
                   <thead className="bg-gray-100 ">
                     <tr className=" text-left  ">
                       <th
                         scope="col"
-                        className="text-sm font-semibold text-gray-900 px-3 py-3  w-[200px] "
+                        className="text-sm font-semibold text-gray-900 px-3 py-3  "
                       >
                         Employee Name
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-semibold text-gray-900 px-3 py-3   w-[180px] "
+                        className="text-sm font-semibold text-gray-900 px-3 py-3   "
                       >
                         User Name
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-3 py-3  w-[146px] "
+                        className="text-sm font-medium text-gray-900 px-3 py-3  "
                       ></th>
                     </tr>
                   </thead>
@@ -276,11 +276,11 @@ const User = () => {
                         })
                       : "No Data"}
                   </tbody>
-                </div>
-              </table>
+                </table>
+              </div>
             </div>
 
-            <div className=" w-[550px] h-[550px] mt-2  ">
+            <div className=" p-4 2xl:w-full xl:w-full lg:w-full md:w-full xmd:w-[95%] sm:w-[88%] xsm:w-[70%]  ">
               <button
                 onClick={() => navigate("/user/department")}
                 className="mb-4 ml-2 mt-4 inline-block px-6 py-2 border-2 border-blue-600 bg-blue-200 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
@@ -290,8 +290,8 @@ const User = () => {
                   <span className="ml-6">New Department</span>
                 </div>
               </button>
-              <table className="w-full">
-                <div className="w-[540px] h-[460px]  scrollbar-thin  scrollbar-thumb-gray-400 scrollbar-track-gray-300 overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
+              <div className=" p-3 w-full h-[460px] 2xl:w-full  scrollbar-thin  scrollbar-thumb-gray-400 scrollbar-track-gray-300 overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full">
+                <table className="w-full">
                   <thead className="bg-gray-100 border-b ">
                     <tr className=" text-left ">
                       <th
@@ -362,8 +362,8 @@ const User = () => {
                       );
                     })}
                   </tbody>
-                </div>
-              </table>
+                </table>
+              </div>
             </div>
           </div>
         </div>

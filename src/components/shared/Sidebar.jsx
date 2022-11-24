@@ -87,16 +87,14 @@ const Sidebar = () => {
   ];
   return (
     <>
-      <div
-        className={`bg-[#0972B8] ${!toOpen ? "w-60" : "w-16"} duration-300`}
-      >
+      <div className={`bg-[#0972B8] ${!toOpen ? "w-65" : "w-16"} duration-300`}>
         <div
           className={`bg-white p-[0.47rem] flex flex-col relative duration-300`}
         >
           {/* Session for Top part */}
           <div className="flex-none items-center gap-2 px-5 py-5 duration-300">
-           <GiHamburgerMenu
-            size={25}
+            <GiHamburgerMenu
+              size={25}
               className={`absolute -right-8 top-4 w-7 text-black border border-gray-500 duration-300 cursor-pointer `}
               onClick={() => setOpen(!toOpen)}
             />
@@ -111,7 +109,7 @@ const Sidebar = () => {
               <img
                 src={loinImg}
                 alt="Sample"
-                className={`duration-300 absolute cursor-pointer left-50% top-2 h-10 max-w-60`}
+                className={`duration-300 absolute cursor-pointer ml-5 top-2 h-10 w-[140px]`}
               />
             ) : null}
           </div>
@@ -124,18 +122,19 @@ const Sidebar = () => {
                 <li
                   key={index}
                   className={`${
-                    active === index && "bg-gray-600"
+                    active === index &&
+                    " bg-gray-100 border shadow-md border-gray-200 w-full text-blue-600 rounded-tr-2xl rounded-bl-2xl"
                   } duration-800 text-white flex items-center gap-x-4 cursor-pointer p-2
-                                    ${menu.gap ? "mt-7" : "mt-2"}`}
+                                    ${menu.gap ? "mt-6 " : "mt-1"}`}
                   onClick={() => setActive(index)}
                 >
                   <Link to={menu?.path} key={index}>
                     <div
-                      className={`duration-800 ${
+                      className={` flex relative duration-800 ${
                         !toOpen ? "w-60" : "w-16"
                       }`}
                     >
-                      <span className="text-xl block float-left ml-5 ">
+                      <span className="text-xl block float-left ml-[13px]">
                         {menu.src}
                       </span>
                       <span
@@ -147,54 +146,54 @@ const Sidebar = () => {
                       </span>
                       <span
                         className={` float-right ${
-                          toOpen ? "mr-8" : "mr-5"
-                        } text-white  duration-800`}
+                          toOpen ? "m-5" : "mr-5"
+                        } text-black text-bold duration-800 absolute ml-[90%]`}
                         onClick={() => {
                           setCurrentMenu(menu.title);
-                          setSubmenuOpen(!submenuOpen)
-                        
+                          setSubmenuOpen(!submenuOpen);
                         }}
                       >
-                        {menu.submenu && !toOpen && (
-                            (menu.subIcon)
-                        )}
+                        {menu.submenu && !toOpen && menu.subIcon}
                       </span>
                     </div>
                   </Link>
                 </li>
-                {menu.submenu && submenuOpen && currentMenu === menu.title  && !toOpen && (
-                  <ul className="mt-2">
-                   {menu.submenuItems.map((submenuItem, index) => {
-                      return(
-                        <li
-                          key={index}
-                          className={`
+                {menu.submenu &&
+                  submenuOpen &&
+                  currentMenu === menu.title &&
+                  !toOpen && (
+                    <ul className="mt-2">
+                      {menu.submenuItems.map((submenuItem, index) => {
+                        return (
+                          <li
+                            key={index}
+                            className={`
                           hover:bg-gray-400 text-white text-sm flex items-center gap-x-4 cursor-pointer p-2 px-5
-                          `} 
-                        >
-                          <Link to={submenuItem?.path} key={index}>
-                            <div className="w-60">
-                              <span
-                                className={`text-md block float-left ml-9 ${
-                                  toOpen && "text-md"
-                                } `}
-                              >
-                                {submenuItem.src}
-                              </span>
-                              <span
-                                className={`text-sm font-extralight flex-1 duration-500 ml-2 ${
-                                  toOpen && "hidden"
-                                } `}
-                              >
-                              {submenuItem.title}
-                            </span>
-                          </div>
-                        </Link>
-                      </li>
-                      );
-                   })}
-                  </ul>
-                )}
+                          `}
+                          >
+                            <Link to={submenuItem?.path} key={index}>
+                              <div className="w-60">
+                                <span
+                                  className={`text-md block float-left ml-9 ${
+                                    toOpen && "text-md"
+                                  } `}
+                                >
+                                  {submenuItem.src}
+                                </span>
+                                <span
+                                  className={`text-sm font-extralight flex-1 duration-500 ml-2 ${
+                                    toOpen && "hidden"
+                                  } `}
+                                >
+                                  {submenuItem.title}
+                                </span>
+                              </div>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
               </>
             ))}
           </ul>

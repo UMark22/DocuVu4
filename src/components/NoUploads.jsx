@@ -13,45 +13,41 @@ import {
 const data = [
   {
     name: "Jan",
-    single: 4000,
-    bulk: 2400,
+    uploads: 4000,
   },
   {
     name: "Feb",
-    single: 3000,
+    uploads: 3000,
     bulk: 1398,
   },
   {
     name: "March",
-    single: 2000,
-    bulk: 9800,
+    uploads: 2000,
   },
   {
     name: "April",
-    single: 2780,
-    bulk: 3908,
+    uploads: 2780,
   },
   {
     name: "May",
-    single: 1890,
-    bulk: 4800,
+    uploads: 1890,
   },
   {
     name: "June",
-    single: 2390,
-    bulk: 3800,
+    uploads: 2390,
   },
   {
     name: "July",
-    single: 3490,
-    bulk: 4300,
+    uploads: 3490,
   },
 ];
 
 const NoUploads = () => {
   return (
     <div className="h-auto w-full bg-white p-4 rounded-xl shadow-md flex flex-col gap-4">
-      <strong className="text-gray-700 font-medium">No. of Uploads</strong>
+      <strong className="text-gray-700 font-semibold text-[14px]">
+        No. of Uploads
+      </strong>
       <div className="mt-3 w-[95%] h-full text-xs">
         <ResponsiveContainer>
           <LineChart
@@ -72,11 +68,10 @@ const NoUploads = () => {
             <Legend />
             <Line
               type="monotone"
-              dataKey="single"
+              dataKey="uploads"
               stroke="#8884d8"
               activeDot={{ r: 8 }}
             />
-            <Line type="monotone" dataKey="bulk" stroke="#82ca9d" />
           </LineChart>
         </ResponsiveContainer>
       </div>
