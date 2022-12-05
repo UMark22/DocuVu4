@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
+import Input from "../common/NewUserInput";
+
 const EditUser = () => {
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
@@ -77,7 +79,7 @@ const EditUser = () => {
 
       const text = text1 + "\n" + text2;
 
-      const url = "http://192.168.6.52:9090/";
+      const url = "http://192.168.75.182:9090/";
       axios
         .post(`${url}api/Users/AddUsers`, data)
         .then((result) => {
@@ -95,7 +97,7 @@ const EditUser = () => {
     }
   };
 
-  const url = "http://192.168.6.52:9090/";
+  const url = "http://localhost:9090/";
   let params = useParams();
   if (params.id > 0) {
     const data = {
@@ -118,8 +120,8 @@ const EditUser = () => {
   }
 
   return (
-    <div>
-      <div className=" px-10 mt-10 ml-[25%] bg-white w-[50%] h-[500px] shadow-2xl shadow-secondary-600 border rounded-lg">
+    <div className="w-full h-full bg-gray-100 overflow-hidden">
+      <div className="px-10  mb-10 mt-2 ml-[25%]  w-[45%] h-[98%] border bg-white border-gray-300 shadow-md  rounded-lg overflow-y-scroll  scrollbar-hide ">
         <div className="flex  ">
           <div className="flex justify-center w-[45px] h-[40px] -ml-8 mt-2  bg-gray-200  rounded-lg">
             <button
@@ -137,7 +139,7 @@ const EditUser = () => {
 
         {/* start */}
 
-        <form className="">
+        <form className=" w-full h-[95%] mb-3 ">
           <div className="w-full text-center  shadow-2xl  ">
             <p className="text-xm text-center  font-semibold">
               Basic Information
@@ -146,52 +148,77 @@ const EditUser = () => {
 
           <div className="flex flex-wrap -mx-3 mb-3 ml-2 mr-2 ">
             <div className="w-full md:w-1/2 px-3 md:mb-0 mt-4 ">
-              <p className="text-gray-500 text-[12px] italic ml-4 mb-1">
-                Firstname
-              </p>
-              <input
+              <Input
                 value={firstName}
-                className="text-xs appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
-                id="grid-first-name"
+                name="FirstName"
+                id="firstName"
                 type="text"
-                placeholder="Firstname"
-                disabled
+                disabled="true"
               />
             </div>
 
             <div className="w-full md:w-1/2 px-3 mt-4 ">
-              <p className="text-gray-500 text-[12px] italic ml-3 mb-1">
-                Lastname
-              </p>
-              <input
+              <Input
                 value={lastName}
-                className="text-xs appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="grid-last-name"
+                name="lastName"
+                id="lastName"
                 type="text"
-                placeholder="Lastname"
-                disabled
+                disabled="true"
               />
             </div>
           </div>
 
-          <div className=" w-full px-3 mt-4 mb-5 ">
+          <div className="flex flex-wrap -mx-3 mb-2 ml-2 mr-2 ">
+            <div className="w-full md:w-1/2 px-3  md:mb-0   ">
+              <Input
+                name="employeeId"
+                id="employeeId"
+                type="text"
+                placeHolder="Employee Id"
+              />
+              {/* {userData.employeeIdError ? (
+                  <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
+                    Please fill out the Employee ID.
+                  </p>
+                ) : null} */}
+            </div>
+            <div className="w-full md:w-1/2 px-3 ">
+              <Input
+                name="phoneNumber"
+                id="phoneNumber"
+                placeHolder="Phone Number"
+                type="text"
+                maxLength={12}
+              />
+
+              {/* {userData.phoneNumberValid ? (
+                  <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
+                    Please fill valid Phone Number.
+                  </p>
+                ) : null} */}
+
+              {/* {userData.phoneNumberError ? (
+                  <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
+                    Please fill out the Phone Number.
+                  </p>
+                ) : null} */}
+            </div>
+          </div>
+
+          <div className=" w-full px-3 mt-2 mb-5 ">
             <div className="px-3">
-              <p className="text-gray-500 text-[12px] italic ml-4 mb-1">
-                Email Address
-              </p>
-              <input
+              <Input
                 value={emailAdd}
                 onChange={handleEmailAddress}
-                className="text-[12px] appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-1 leading-tight focus:outline-none focus:bg-white"
-                id="grid-last-name"
+                id="emailAddress"
                 type="text"
                 placeholder="Email Address"
               />
-              {emailAddError ? (
+              {/* {emailAddError ? (
                 <p className="text-red-500 text-xs italic ml-4">
                   Please fill out this field.
                 </p>
-              ) : null}
+              ) : null} */}
             </div>
           </div>
 

@@ -64,7 +64,7 @@ const AuditTable = () => {
         <>
             <div className='relative'>
                 <DataTable 
-						title=""
+						title="Audit Trail"
                         columns={columns} 
                         data={posts}
                         pagination

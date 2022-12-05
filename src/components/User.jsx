@@ -70,7 +70,7 @@ const User = () => {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
-  const url = "http://192.168.6.52:9090/";
+  const url = "http://localhost:9090/";
 
   const getUser = () => {
     axios

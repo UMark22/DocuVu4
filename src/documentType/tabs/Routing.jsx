@@ -4,7 +4,7 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 const Routing = () => {
   return (
     <>
-        <div className='flex flex-row gap-4 pb-16'>
+        <div className='flex flex-row gap-4 pb-8'>
         <table className='table-fixed rounded-lg bg-white shadow-md shadow-gray-700/50'>
                 <thead className='h-9 mb-2 rounded-lg bg-gray-300 shadow-md shadow-gray-700/50 pt-3'>
                     <th className='w-[12.5rem] h-10 text-[12px] text-black px-4'>Time Settings</th>

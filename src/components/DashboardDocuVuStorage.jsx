@@ -12,16 +12,16 @@ const DashboardDocuVuStorage = () => {
             <FiHardDrive className="text-2xl text-sky-500" />
           </div>
           <div className="pl-4">
-            <span className="text-[14px] text-black font-semibold">
+            <span className="text-[12px] text-black font-semibold">
               C: Drive
             </span>
             <div className="flex items-center">
-              <strong className=" text-[14px] text-basic text-black font-semibold">
+              <strong className=" text-[12px] text-basic text-black font-semibold">
                 90%
               </strong>
             </div>
             <div className="flex items-center">
-              <span className="text-[13px] text-black font-light">
+              <span className="text-[12px] text-black font-light">
                 1.48TB free of 1.79TB
               </span>
             </div>
@@ -32,16 +32,16 @@ const DashboardDocuVuStorage = () => {
             <FiHardDrive className="text-2xl text-green-500" />
           </div>
           <div className="pl-4">
-            <span className="text-[14px] text-black font-semibold">
+            <span className="text-[12px] text-black font-semibold">
               D: Drive
             </span>
             <div className="flex items-center">
-              <strong className="text-[14px] text-black font-semibold">
+              <strong className="text-[12px] text-black font-semibold">
                 70%
               </strong>
             </div>
             <div className="flex items-center">
-              <span className="text-[13px] text-black font-light">
+              <span className="text-[12px] text-black font-light">
                 1.20TB free of 2.79TB
               </span>
             </div>
@@ -52,14 +52,14 @@ const DashboardDocuVuStorage = () => {
             <FaUserAlt className="text-2xl text-blue-500" />
           </div>
           <div className="pl-4">
-            <span className="text-[14px] text-black font-semibold">User</span>
+            <span className="text-[12px] text-black font-semibold">User</span>
             <div className="flex items-center">
-              <strong className="text-[14px] text-black font-semibold">
+              <strong className="text-[12px] text-black font-semibold">
                 120
               </strong>
             </div>
             <div className=" items-center">
-              <span className=" relative flex text-[13px] text-black font-light">
+              <span className=" relative flex text-[12px] text-black font-light">
                 Active Users :{" "}
                 <p className="absolute px-[110%] text-green-400 font-medium">
                   68
@@ -73,16 +73,16 @@ const DashboardDocuVuStorage = () => {
             <AiFillFolder className="text-2xl text-yellow-400" />
           </div>
           <div className="pl-4">
-            <span className="text-[14px] text-black font-semibold">
+            <span className="text-[12px] text-black font-semibold">
               Document Types
             </span>
             <div className="flex items-center">
-              <strong className="text-[14px] text-black font-semibold">
+              <strong className="text-[12px] text-black font-semibold">
                 10
               </strong>
             </div>
             <div className="flex items-center">
-              <span className="text-[13px] text-black font-light">
+              <span className="text-[12px] text-black font-light">
                 No. of Document Types
               </span>
             </div>

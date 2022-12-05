@@ -12,11 +12,11 @@ const MultipleUpload = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-4 bg-white w-full h-full rounded-xl shadow-lg border p-2 pt-2 ">
-        <div className=" lg:flex lg:flex-row lg:gap-4 xl:flex xl:flex-row xl:gap-4 md:flex md:flex-col md:gap-4 sm:flex sm:flex-col sm:gap-4 xsm:flex xsm:flex-col xsm:gap-4 px-4">
-          <div className=" rounded-xl shadow-lg border bg-white h-full w-[40%] xl:w-[40%] lg:w-[40%] md:w-full sm:w-full pb-3 pt-2">
-            <div className="flex flex-row justify-start gap-2  pl-3 pt-2">
-              <div className="flex justify-center w-[45px] h-[40px] -ml-1 -mt-1 mb-4 bg-gray-200 rounded-lg">
+      <div className="flex flex-col bg-white h-full w-full 2xl:h-screen rounded-xl shadow-lg border pb-3 pt-3 pr-3 pl-3 overflow-hidden">
+        <div className="h-full  2xl:flex 2xl:flex-row xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-col sm:flex sm:flex-col gap-4 justify-start p-3">
+          <div className="w-full xl:w-[42%] lg:w-full md:w-full sm:w-[35rem] border bg-white border-gray-300 h-full  rounded-xl shadow-xl overflow-auto p-4 ">
+            <div className="flex flex-row justify-start pl-3 pt-2 ">
+              <div className="flex justify-center w-[45px] h-[40px] -ml-3 -mt-2 mb-5 bg-gray-200 rounded-lg">
                 <button
                   onClick={() => navigate("/document")}
                   className="text-[22px] text-black relative"
@@ -52,29 +52,31 @@ const MultipleUpload = () => {
                 </button>
               </div>
             </div>
-            <div lassName="flex flex-row gap-4 h-full  p-3">
-              <div className="bg-transparent border border-gray-400 h-[15rem]">
-                <table className="table-auto">
-                  <tr>
-                    <td className="w-96">
-                      <span className="text-[12px] px-2">AA-SAMPLE.csv</span>
-                    </td>
-                    <td>
-                      <button
-                        type="submit"
-                        id="btnSelect"
-                        className="pr-1"
-                        onClick={() => alert("Selected")}
-                      >
-                        <AiOutlineSelect size={25} />
-                      </button>
-                    </td>
-                  </tr>
+            <div lassName="flex flex-row gap-4 p-3">
+              <div className="bg-transparent border border-gray-400 h-full">
+                <table className="table-fixed h-full">
+                  <tbody>
+                    <tr>
+                      <td className="w-96">
+                        <span className="text-[12px] px-2">AA-SAMPLE.csv</span>
+                      </td>
+                      <td>
+                        <button
+                          type="submit"
+                          id="btnSelect"
+                          className="pr-1"
+                          onClick={() => alert("Selected")}
+                        >
+                          <AiOutlineSelect size={25} />
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>
-            <div lassName="flex flex-row gap-4 h-full">
-              <div className="flex justify-between pt-4">
+            <div lassName="flex flex-row gap-4 h-full w-full">
+              <div className="flex justify-between pt-4 px-2">
                 <div>
                   <span className="text-[13px] text-red-500 font-semibold">
                     Error(s):
@@ -88,31 +90,36 @@ const MultipleUpload = () => {
                   <span className="pl-2 text-[15px]">0</span>
                 </div>
               </div>
+              <div className="bg-transparent border border-gray-400 h-full">
+                <table className="table-auto">
+                  <tr>
+                    <td className="w-96">
+                      <span className="text-[12px] px-2 italic text-red-500">
+                        Existing Filename
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
-            <div className="flex flex-row gap-4 justify-center">
-              <div className="relative pt-3 pb-5">
+            <div className="flex flex-row gap-4 ml-5  mt-[45%]">
+              <div className="relative ml-5 mt-1 border w-[140px] h-[40px]">
                 <button
                   type="submit"
                   id="btnLoad"
-                  className="text-center pl-3 rounded-lg h-10 w-[8rem] border-[1px] border-[#0972B8] bg-[#0972B8] text-white text-sm"
+                  className="text-center pl-3 rounded-lg h-full w-full border border-[#0972B8] bg-[#0972B8] text-white text-sm"
                 >
-                  <BsCloudUpload
-                    size={25}
-                    className="text-white text-sm sm:absolute sm:top-[45%] sm:left-[7%] -translate-y-1/2"
-                  />
+                  <BsCloudUpload className="text-white text-[20px] sm:absolute sm:top-[45%] sm:left-[7%] -translate-y-1/2" />
                   Upload
                 </button>
               </div>
-              <div className="relative pt-3 pb-5">
+              <div className="relative mt-1">
                 <button
                   type="submit"
                   id="btnCancel"
                   className="text-center pl-3 rounded-lg h-10 w-[8rem] border-[1px] border-[#0972B8] bg-[#0972B8] text-white text-sm"
                 >
-                  <TiCancel
-                    size={25}
-                    className="text-white text-sm sm:absolute sm:top-[45%] sm:left-[7%] -translate-y-1/2"
-                  />
+                  <TiCancel className="text-white text-[23px] sm:absolute sm:top-[45%] sm:left-[7%] -translate-y-1/2" />
                   Cancel
                 </button>
               </div>
@@ -122,7 +129,6 @@ const MultipleUpload = () => {
             <SelectBulkUpload />
           </div>
         </div>
-        <div className="flex flex-row gap-4"></div>
       </div>
     </>
   );

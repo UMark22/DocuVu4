@@ -91,7 +91,7 @@ const RecyclebinTable = () => {
         <>
             <div className='relative'>
                 <DataTable 
-						title=""
+						title="Recycle Bin"
                         columns={columns} 
                         data={filteredDocumentType}
                         pagination
@@ -103,7 +103,8 @@ const RecyclebinTable = () => {
                         highlightOnHover
                         actions={
                                 <>
-                                    <div className="relative">
+								<div className='flex gap-4'>
+									<div className="relative">
                                         <AiOutlineSearch size={25} className='focus:bg-white text-black sm:absolute sm:top-[50%] sm:left-[85%] -translate-y-1/2' />
                                         <input type="text" placeholder='Search...' id='searchTable' className='form-control bg-white text-sm text-black w-[200px] h-10 px-3 border-gray-200 border-[1px] focus:outline-0'
                                             value={search}
@@ -126,8 +127,16 @@ const RecyclebinTable = () => {
                                             Purge All 
                                         </button>
                                      </div>
+								</div>
                                 </>
                         }
+						subHeader
+                        subHeaderAlign = "center"
+                        subHeaderComponent ={
+											<>	
+												<div></div>
+											</>				
+						}
                     />
             </div>
         </>

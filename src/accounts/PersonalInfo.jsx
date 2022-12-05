@@ -3,7 +3,7 @@ import { AiFillHome } from "react-icons/ai";
 import { MdSecurity, MdPrivacyTip } from "react-icons/md";
 import { BsFillFileEarmarkPersonFill } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
-import MngHeader from "./MngHeader";
+// import MngHeader from "./MngHeader";
 import { AiOutlineRight } from "react-icons/ai";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import Header from "../components/shared/Header";
@@ -88,13 +88,13 @@ const Home = () => {
                         </span>
                       </div>
                       <div className=" flex ml-10 w-[90%] h-[90px] border-t border-gray-300 mt-[20px] bg-gray-100 cursor-pointer">
-                        <div class="flex-none  px-5 py-7 text-[13px]">
+                        <div className="flex-none  px-5 py-7 text-[13px]">
                           Photo
                         </div>
-                        <div class="flex-1 px-[130px] py-7 text-[12px] ">
+                        <div className="flex-1 px-[130px] py-7 text-[12px] ">
                           Add a photo to personalize your account
                         </div>
-                        <div class="flex-none w-32 py-4 text-[20px] -mr-[7%] -mt-1">
+                        <div className="flex-none w-32 py-4 text-[20px] -mr-[7%] -mt-1">
                           <img
                             src={Profile}
                             alt=""
@@ -104,34 +104,34 @@ const Home = () => {
                       </div>
 
                       <div className=" flex ml-10 w-[90%] h-[60px] border-t border-gray-300 ">
-                        <div class="flex-none  text-left px-5 py-4 text-[13px] w-[25%] ">
+                        <div className="flex-none  text-left px-5 py-4 text-[13px] w-[25%] ">
                           Name
                         </div>
-                        <div class="flex-1 py-4 text-left text-[12px]  ">
+                        <div className="flex-1 py-4 text-left text-[12px]  ">
                           <span className="ml-[25%]">Jeyllou Maru</span>
                         </div>
                       </div>
                       <div className=" flex ml-10 w-[90%] h-[60px] border-t border-gray-300 ">
-                        <div class="flex-none text-left px-5 py-4 text-[13px] w-[25%]">
+                        <div className="flex-none text-left px-5 py-4 text-[13px] w-[25%]">
                           Employee No.
                         </div>
-                        <div class="flex-1  text-left  py-4 text-[12px] ">
+                        <div className="flex-1  text-left  py-4 text-[12px] ">
                           <span className="ml-[25%]">Employee000001</span>
                         </div>
                       </div>
                       <div className=" flex ml-10 w-[90%] h-[60px] border-t border-gray-300 ">
-                        <div class="flex-none text-left px-5 py-4 text-[13px] w-[25%]">
+                        <div className="flex-none text-left px-5 py-4 text-[13px] w-[25%]">
                           Department
                         </div>
-                        <div class="flex-1  text-left  py-4 text-[12px]">
+                        <div className="flex-1  text-left  py-4 text-[12px]">
                           <span className="ml-[25%]">MIS</span>
                         </div>
                       </div>
                       <div className=" flex ml-10 w-[90%] h-[60px] border-t border-gray-300 ">
-                        <div class="flex-none text-left  px-5 py-4 text-[13px] w-[25%]">
+                        <div className="flex-none text-left  px-5 py-4 text-[13px] w-[25%]">
                           Document Access
                         </div>
-                        <div class="flex-1  text-left  py-4 text-[12px]">
+                        <div className="flex-1  text-left  py-4 text-[12px]">
                           <span className="ml-[25%]">All Access</span>
                         </div>
                       </div>
@@ -144,19 +144,19 @@ const Home = () => {
                         </span>
                       </div>
                       <div className=" flex ml-10 w-[90%] h-[60px] border-t border-gray-300 mt-10 cursor-pointer">
-                        <div class="flex-none  px-5 py-4 text-[13px]">
+                        <div className="flex-none  px-5 py-4 text-[13px]">
                           Email
                         </div>
-                        <div class="flex-1 px-[130px] py-4 text-[12px] ">
+                        <div className="flex-1 px-[130px] py-4 text-[12px] ">
                           JeyllouMaru@gmail.com
                         </div>
-                        <div class="flex-none w-32 py-4 text-[20px] -mr-[10%]"></div>
+                        <div className="flex-none w-32 py-4 text-[20px] -mr-[10%]"></div>
                       </div>
                       <div className=" flex ml-10 w-[90%] h-[60px] border-t border-gray-300 cursor-pointer">
-                        <div class="flex-none  px-5 py-4 text-[13px]">
+                        <div className="flex-none  px-5 py-4 text-[13px]">
                           Phone
                         </div>
-                        <div class="flex-1  px-[120px] py-4 text-[12px] ">
+                        <div className="flex-1  px-[120px] py-4 text-[12px] ">
                           +639219278512
                         </div>
                       </div>

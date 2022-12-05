@@ -50,7 +50,7 @@ const DepartmentTable = () => {
         <>
             <div className='relative'>
                 <DataTable 
-						title=""
+						title="Department Access"
                         columns={columns} 
                         data={posts}
                         pagination

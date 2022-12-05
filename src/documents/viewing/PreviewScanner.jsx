@@ -8,18 +8,18 @@ const PreviewScanner = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-row gap-4 bg-gray-200 rounded-xl shadow-xl border-0 h-full w-full text-center">
-      <div className="flex flex-col">
-        <h1 className="font-semibold text-sm p-2">Preview Image</h1>
+    <div className=" flex flex-col gap-4 justify-start bg-gray-100 rounded-xl shadow-xl border-0  2xl:h-full w-full  overflow-auto">
+      <div className="flex flex-col ">
+        <h1 className="font-semibold text-sm p-2 text-center">Preview Image</h1>
 
         <div className="flex-1 p-4 min-h-0 overflow-auto">
           {/* Container for image*/}
-          <div className="flex flex-row gap-4">
-            <img src={sampleimage} alt="preview" className="w-full h-[100vh]" />
+          <div className="flex flex-row">
+            <img src={sampleimage} alt="preview" className="w-full h-[290px]" />
           </div>
         </div>
 
-        <div className="flex flex-row gap-4 p-3">
+        <div className="flex flex-row gap-4 p-3 mt-12">
           <div className="relative pt-3">
             <button
               type="submit"

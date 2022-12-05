@@ -45,7 +45,7 @@ module.exports = {
       display: ["group-focus"],
     },
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [require("tailwind-scrollbar"), require("tailwind-scrollbar-hide")],
   variants: {
     scrollbar: ["rounded"],
   },

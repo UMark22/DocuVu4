@@ -17,7 +17,7 @@ const Details = () => {
             onClick={() => alert("Add Child")}
           >
             <AiOutlineUserAdd
-              size={30}
+              size={25}
               className="text-[#0972B8] text-[12px]"
             />
           </button>
@@ -26,7 +26,7 @@ const Details = () => {
             className=""
             onClick={() => alert("Delete Child")}
           >
-            <HiTrash size={30} className="ml-2 text-red-700 text-[12px]" />
+            <HiTrash size={25} className="ml-2 text-red-700 text-[12px]" />
           </button>
         </div>
       </div>

@@ -14,6 +14,16 @@ const nodes = [
       },
       { value: "P1 child 2", label: "Payment Request" },
       { value: "P1 child 3", label: "Purchase Request Form" },
+      { value: "P1 chiddcxcld 2", label: "Payment Request" },
+      { value: "P1 cshsdild 3", label: "Purchase Request Form" },
+      { value: "P1 cadsdhild 2", label: "Payment Request" },
+      { value: "P1 cdscxhxild 3", label: "Purchase Request Form" },
+      { value: "P1 chdild 2", label: "Payment Request" },
+      { value: "P1 scxhild 3", label: "Purchase Request Form" },
+      { value: "P1 chsild 2", label: "Payment Request" },
+      { value: "P1 chadild 3", label: "Purchase Request Form" },  { value: "P1 chxxxxxxild 2", label: "Payment Request" },
+      { value: "P1 chisdsld 3", label: "Purchase Request Form" },  { value: "P1 childxxxzs 2", label: "Payment Request" },
+      { value: "P1 dchild 3", label: "Purchase Request Form" },
     ],
   },
   {
@@ -50,13 +60,10 @@ const DocumentType = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-2 h-auto w-full ">
-        <div className="pt-2 text-lg ml-2 font-normal">
-          <h1>Document Type</h1>
-        </div>
-        <div className=" h-[30rem] xl:h-full lg:h-full md:h-full sm:h-full 2xl:flex 2xl:flex-row xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-col sm:flex sm:flex-col gap-4 justify-start">
-          <div className="w-full xl:w-[40%] lg:w-full md:w-full sm:w-[35rem] bg-white rounded-xl shadow-xl overflow-auto pb-2">
-            <h1 className="font-semibold text-sm pt-2 text-center">
+      <div className="flex flex-col gap-4 bg-white  w-full rounded-xl shadow-lg border p-4 overflow-hidden">
+        <div className=" h-[27.5rem] xl:h-[27.5rem] lg:h-full md:h-full sm:h-full 2xl:flex 2xl:flex-row xl:flex xl:flex-row lg:flex lg:flex-row md:flex md:flex-col sm:flex sm:flex-col gap-4 justify-start">
+          <div className="w-full xl:w-[40%] lg:w-full md:w-full sm:w-[35rem] border border-gray-300  rounded-xl shadow-xl overflow-auto pb-2">
+            <h1 className="font-semibold text-sm pt-2 text-center sticky">
               Document Types
             </h1>
             <div className="text-[10px] w-full">

@@ -1,81 +1,96 @@
-import React from 'react'
-import { useState } from "react";
-import {FiHardDrive, FiMinus, FiPlus } from 'react-icons/fi'
+import React from "react";
+import { FiHardDrive } from "react-icons/fi";
+import { FaUserAlt } from "react-icons/fa";
+import { AiFillFolder } from "react-icons/ai";
 
-
-
-
-const DashboardDocuVuStorage = ()  =>{
-    const[Open, setOpen] = useState(true);
-
-	return (
-        <>
-        <div className='py-2 text-lg ml-2 font-normal'>
-            <h1>Dashboard</h1>
-        </div>
-        {/* SESSION DISK STORAGE */}
-        <div>
-            <div>
-                <BoxStorage >
-                    <div>
-                        <span className='text-[15px] '>DocuVu Storage</span>
-                    </div>
-                    <div>
-                        <span className='pt-1 duration-300'>
-                            {Open ?<FiMinus className='duration-100' onClick={() => setOpen(!Open)} />:null} 
-                            {!Open ?<FiPlus className='duration-100' onClick={() => setOpen(!Open)} />:null} 
-                        </span>
-                    </div>
-                </BoxStorage>
+const DashboardDocuVuStorage = () => {
+  return (
+    <>
+      <div className="flex flex-row gap-4">
+        <div className="w-full bg-white p-4 shadow-md rounded-xl flex items-center">
+          <div className="h-20 w-20 flex items-center justify-center rounded-full  bg-gray-100 shadow-inner shadow-zinc-300">
+            <FiHardDrive className="text-2xl text-sky-500" />
+          </div>
+          <div className="pl-4">
+            <span className="text-[14px] text-black font-semibold">
+              C: Drive
+            </span>
+            <div className="flex items-center">
+              <strong className=" text-[14px] text-basic text-black font-semibold">
+                90%
+              </strong>
             </div>
-            {Open?<BoxContainerStorage>
-                <div className="flex flex-1 gap-4 w-[50rem]">
-                <BoxWrap>
-                    <div className="h-20 w-20 flex items-center justify-center bg-sky-500">
-                        <FiHardDrive className="text-2xl text-white" />
-                    </div>
-                    <div className="pl-4">
-                        <span className="text-sm text-black font-bold">C: Drive</span>
-                        <div className="flex items-center">
-                            <strong className="text-basic text-black font-semibold">90%</strong>
-                        </div>
-                        <div className="flex items-center">
-                            <span className="text-sm text-black font-light">1.48TB free of 1.79TB</span>
-                        </div>
-                    </div>
-                </BoxWrap>
-                <BoxWrap>
-                    <div className="h-20 w-20 flex items-center justify-center bg-green-500">
-                        <FiHardDrive className="text-2xl text-white" />
-                    </div>
-                    <div className="pl-4">
-                        <span className="text-sm text-black font-bold">D: Drive</span>
-                        <div className="flex items-center">
-                            <strong className="text-basic text-black font-semibold">70%</strong>
-                        </div>
-                        <div className="flex items-center">
-                            <span className="text-sm text-black font-light">1.20TB free of 2.79TB</span>
-                        </div>
-                    </div>
-                </BoxWrap>
-                </div>
-            </BoxContainerStorage>:null} 
+            <div className="flex items-center">
+              <span className="text-[13px] text-black font-light">
+                1.48TB free of 1.79TB
+              </span>
+            </div>
+          </div>
         </div>
-        </>
-	);
+        <div className="w-full bg-white  p-4 shadow-md rounded-xl flex items-center">
+          <div className="h-20 w-20 flex items-center justify-center rounded-full  bg-gray-100 shadow-inner shadow-zinc-300">
+            <FiHardDrive className="text-2xl text-green-500" />
+          </div>
+          <div className="pl-4">
+            <span className="text-[14px] text-black font-semibold">
+              D: Drive
+            </span>
+            <div className="flex items-center">
+              <strong className="text-[14px] text-black font-semibold">
+                70%
+              </strong>
+            </div>
+            <div className="flex items-center">
+              <span className="text-[13px] text-black font-light">
+                1.20TB free of 2.79TB
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="w-full bg-white p-4 shadow-md rounded-xl flex items-center">
+          <div className="h-20 w-20 flex items-center justify-center rounded-full bg-gray-100 shadow-inner shadow-zinc-300">
+            <FaUserAlt className="text-2xl text-blue-500" />
+          </div>
+          <div className="pl-4">
+            <span className="text-[14px] text-black font-semibold">User</span>
+            <div className="flex items-center">
+              <strong className="text-[14px] text-black font-semibold">
+                120
+              </strong>
+            </div>
+            <div className=" items-center">
+              <span className=" relative flex text-[13px] text-black font-light">
+                Active Users :{" "}
+                <p className="absolute px-[110%] text-green-400 font-medium">
+                  68
+                </p>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="w-full bg-white  p-4 shadow-md rounded-xl flex items-center">
+          <div className="h-20 w-20 flex items-center justify-center rounded-full bg-gray-100 shadow-inner shadow-zinc-300">
+            <AiFillFolder className="text-2xl text-yellow-400" />
+          </div>
+          <div className="pl-4">
+            <span className="text-[14px] text-black font-semibold">
+              Document Types
+            </span>
+            <div className="flex items-center">
+              <strong className="text-[14px] text-black font-semibold">
+                10
+              </strong>
+            </div>
+            <div className="flex items-center">
+              <span className="text-[13px] text-black font-light">
+                No. of Document Types
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default DashboardDocuVuStorage;
-
-
-const BoxStorage = ({children}) =>{
-    return <div className="bg-white rounded-sm p-4 flex-1   flex items-center h-12 justify-between border-0 border-t-4 border-gray-400">{children}</div>
-}
-
-const BoxContainerStorage = ({children}) =>{
-    return <div className="bg-white rounded-sm  p-4 flex-1 border border-gray-200 flex items-center">{children}</div>
-}
-
-const BoxWrap = ({children}) =>{
-    return <div className="bg-gray-200 rounded-sm p-4 flex-1 border border-gray-200 flex items-center">{children}</div>
-}

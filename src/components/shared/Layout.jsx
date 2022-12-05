@@ -12,7 +12,7 @@ const Layout = () => {
                     <div className='flex flex-col flex-1'>  
                         <Header />
                       
-                        <div className='flex-1 p-4  overflow-auto'>
+                        <div className='flex-1 p-4 overflow-auto'>
                             {<Outlet />}   
                         </div>
                         <Footer />

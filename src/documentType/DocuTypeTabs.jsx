@@ -26,7 +26,7 @@ const DocuTypeTabs = ({ color }) => {
         </a>
       </div>
       <div className="flex flex-wrap">
-        <div className="w-full shadow-xl shadow-gray-400 rounded-xl">
+        <div className="w-full">
           <ul className="flex mb-2 list-none flex-wrap flex-row" role="tablist">
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
               <a
@@ -86,7 +86,7 @@ const DocuTypeTabs = ({ color }) => {
               </a>
             </li>
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words bg-white h-[400px] overflow-auto w-full mb-6 shadow-xl rounded-xl ">
+          <div className="relative flex flex-col min-w-0 break-words bg-white h-[350px] overflow-auto w-full mb-6 shadow-xl rounded-xl ">
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div

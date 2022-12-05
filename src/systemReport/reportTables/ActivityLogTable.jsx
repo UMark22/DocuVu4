@@ -72,7 +72,7 @@ const ActivityLogTable = () => {
         <>
             <div className='relative'>
                 <DataTable 
-						title=""
+						title="Activity Log"
                         columns={columns} 
                         data={posts}
                         pagination

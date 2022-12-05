@@ -1,91 +1,124 @@
-*, ::before, ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
-  body {
-    background: #fff;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 500px;
-    height: 300px;
-    background: #f1f1f1;
-    margin: 100px auto 0;
-    word-break: break-all;
-    border: 1px solid rgba(0, 0, 0, 0.274);
-  }
-  
-  .bloc-tabs {
-    display: flex;
-  }
-  .tabs {
-  
-    padding: 10px;
-    text-align: center;
-    width: 20%;
-    height: 20px;
-    background: rgba(128, 128, 128, 0.075);
-    cursor: pointer;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.274);
-    box-sizing: content-box;
-    position: relative;
-    outline: none;
-  }
-  .tabs:not(:last-child){
-    border-right: 1px solid rgba(0, 0, 0, 0.274);
-  }
-  
-  .active-tabs  {
-    background: white;
-    border-bottom: 1px solid transparent;
-  }
-  
-  .active-tabs::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 30px;
-    left: 35%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 5px;
-    /* background: rgb(88, 147, 241); */
-  }
-  
-  
-  
-  button {
-    border: none;
-    
-  }
-  .content-tabs {
-    flex-grow : 1;
-  }
-  .content {
-    background: white;
-    padding: 5px;
-    width: 100%;
-    height: 370px;
-    display: none;
-  }
-  .content h2 {
-    padding: 0px 0 5px 0px;
-  }
-  .content hr {
-    width: 100px;
-    height: 2px;
-    background: #222;
-    margin-bottom: 5px;
-  }
-  .content p {
-    width: 100%;
-    height: 100%;
-  }
-  .active-content {
-    display: block;
-  }
+}
+::selection{
+  background: #6d50e2;
+  color: #fff;
+}
+.container{
+  max-width: 950px;
+  width: 100%;
+  padding: 40px 50px  40px  40px;
+  background: #fff;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.container .topic{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content .list{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-right: 50px;
+  position: relative;
+}
+.content .list label{
+  height: 60px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60px;
+  cursor: pointer;
+  padding-left: 25px;
+  transition: all 0.5s ease;
+  color: #333;
+  z-index: 12;
+}
+#home:checked ~ .list label.home,
+#blog:checked ~ .list label.blog,
+#help:checked ~ .list label.help,
+#code:checked ~ .list label.code,
+#about:checked ~ .list label.about{
+  color: #fff;
+}
+.content .list label:hover{
+  color: #6d50e2;
+}
+.content .slider{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  border-radius: 12px;
+  background: #6d50e2;
+  transition: all 0.4s ease;
+}
+#home:checked ~ .list .slider{
+  top: 0;
+}
+#blog:checked ~ .list .slider{
+  top: 60px;
+}
+#help:checked ~ .list .slider{
+  top: 120px;
+}
+#code:checked ~ .list .slider{
+  top: 180px;
+}
+#about:checked ~ .list .slider{
+  top: 240px;
+}
+.content .text-content{
+  width: 80%;
+  height: 100%;
+}
+.content .text{
+  display: none;
+}
+.content .text .title{
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.content .text p{
+  text-align: justify;
+}
+.content .text-content .home{
+  display: block;
+}
+#home:checked ~ .text-content .home,
+#blog:checked ~ .text-content .blog,
+#help:checked ~ .text-content .help,
+#code:checked ~ .text-content .code,
+#about:checked ~ .text-content .about{
+  display: block;
+}
+#blog:checked ~ .text-content .home,
+#help:checked ~ .text-content .home,
+#code:checked ~ .text-content .home,
+#about:checked ~ .text-content .home{
+  display: none;
+}
+.content input{
+  display: none;
+}

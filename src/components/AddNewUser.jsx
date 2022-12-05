@@ -35,10 +35,8 @@ const userData = {
   employeeId: "",
   phoneNumber: "",
   emailAddress: "",
-  // userName: "",
-  generateUsername: "",
-  department: [],
-  lockOut: [],
+  department: "",
+  lockOut: "",
   requestBy: "",
   firstNameError: false,
   lastNameError: false,
@@ -46,42 +44,50 @@ const userData = {
   phoneNumberError: false,
   phoneNumberValid: false,
   emailAddressError: false,
-  departmentError: "",
-  lockOutError: "",
+  departmentError: false,
+  lockOutError: false,
   requestByError: "",
 };
 
 const reducer = (user, action) => {
-  if (action.type === "userName") {
-    userData.userNameError = true;
-  }
-  if (action.type === "password") {
-    userData.userPassError = true;
-  }
-  if (action.type === "error") {
-    userData.loginError = true;
-  }
-  if (action.type === "loading") {
-    userData.isLoading = true;
-  }
+  // console.log(action.type);
 
+  if (action.type === "firstName") {
+    userData.firstNameError = true;
+  }
+  if (action.type === "lastName") {
+    userData.lastNameError = true;
+  }
+  if (action.type === "employeeId") {
+    userData.employeeIdError = true;
+  }
+  if (action.type === "phoneNumber") {
+    userData.phoneNumberError = true;
+  }
+  if (action.type === "emailAddress") {
+    userData.emailAddressError = true;
+  } else {
+    if (action.type === "department") {
+      userData.departmentError = true;
+    }
+    if (action.type === "lockOut") {
+      userData.lockOutError = true;
+    }
+    if (action.type === "requestBy") {
+      userData.requestByError = true;
+    }
+  }
   return { ...user, [action.input]: action.value };
 };
 
 const AddUNewUSer = () => {
   const [user, dispatch] = useReducer(reducer, userData);
 
-  // const selectOnChange = (e) => {
-  //   const actionSelect = {
-  //     input: e.target.id,
-  //     value: e.target.value,
-  //   };
-  // };
-
   const inputOnChange = (e) => {
     const action = {
       input: e.target.id,
       value: e.target.value,
+      name: e.target.name,
     };
     dispatch(action);
 
@@ -102,169 +108,59 @@ const AddUNewUSer = () => {
       } else {
         userData.firstNameError = false;
       }
-    } else if (action.input === "lastName") {
+    }
+    if (action.input === "lastName") {
       if (action.value === "") {
         userData.lastNameError = true;
       } else {
         userData.lastNameError = false;
       }
-    } else if (action.input === "employeeId") {
+    }
+    if (action.input === "employeeId") {
       if (action.value === "") {
         userData.employeeIdError = true;
       } else {
         userData.employeeIdError = false;
       }
-    } else if (action.input === "phoneNumber") {
+    }
+    if (action.input === "phoneNumber") {
       if (action.value === "") {
         userData.phoneNumberError = true;
       } else {
         userData.phoneNumberError = false;
       }
-    } else if (action.input === "emailAddress") {
+    }
+    if (action.input === "emailAddress") {
       if (action.value === "") {
         userData.emailAddressError = true;
       } else {
         userData.emailAddressError = false;
       }
     }
+    if (action.name === "deparment") {
+      if (action.value === "") {
+        userData.departmentError = true;
+      } else {
+        userData.departmentError = false;
+      }
+    }
+    if (action.name === "lockOut") {
+      if (action.value === "") {
+        userData.lockOutError = true;
+      } else {
+        userData.lockOutError = false;
+      }
+    }
+    if (action.input === "requestBy") {
+      if (action.value === "") {
+        userData.requestByError = true;
+      } else {
+        userData.requestByError = false;
+      }
+    }
   };
 
   const navigate = useNavigate();
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [emailAdd, setEmail] = useState("");
-  // const [userName, setUserName] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [confirmPassword, setConfirmPassword] = useState("");
-  // const [groupID, setGroupID] = useState("");
-  // const [lockOut, setLockOut] = useState("");
-  // const [dateExpiration, setDateExpiration] = useState("");
-
-  // const [firstNameError, setFirstNameError] = useState("");
-  // const [lastNameError, setLastNameError] = useState("");
-  // const [emailAddError, setEmailError] = useState("");
-  // // const [userNameError, setUserNameError] = useState("");
-  // // const [passwordError, setPasswordError] = useState("");
-  // // const [confirmPasswordError, setConfirmPasswordError] = useState("");
-  // const [groupIDError, setGroupIDError] = useState("");
-  // const [lockOutError, setLockOutError] = useState("");
-  // const [dateExpirationError, setDateExpirationError] = useState("");
-
-  const [showResults, setShowResults] = useState(false);
-
-  // //Empty FirstName
-  // function handleFirstName(e) {
-  //   let firstNameValue = e.target.value;
-  //   if (firstNameValue === "") {
-  //     setFirstNameError(true);
-  //   } else {
-  //     setFirstNameError(false);
-  //     setFirstName(firstNameValue);
-  //   }
-  // }
-
-  //Empty LastName
-  // function handleLastName(e) {
-  //   let lastNameValue = e.target.value;
-
-  //   if (lastNameValue === "") {
-  //     setLastNameError(true);
-  //   } else {
-  //     setLastNameError(false);
-  //     setLastName(lastNameValue);
-  //   }
-  // }
-
-  //Empty EmailAddress
-  // function handleEmailAddress(e) {
-  //   let emailAddressValue = e.target.value;
-
-  //   if (emailAddressValue === "") {
-  //     setEmailError(true);
-  //   } else {
-  //     setEmailError(false);
-  //     setEmail(emailAddressValue);
-  //   }
-  // }
-
-  //Empty UserName
-  // function handleUserName(e) {
-  //   let userNameValue = e.target.value;
-
-  //   if (userNameValue === "") {
-  //     //    setUserNameError(true);
-  //   } else {
-  //     //    setUserNameError(false);
-  //     setUserName(userNameValue);
-  //   }
-  // }
-
-  // //Empty Password
-  // function handlePassword (e)
-  // {
-  //    let passwordValue = e.target.value;
-
-  //    if (passwordValue === "" )
-  //    {
-  //        setPasswordError(true);
-
-  //    }else {
-  //        setPasswordError(false);
-  //        setPassword(passwordValue);
-  //    }
-
-  // }
-
-  // //Empty ConfirmPassword
-  // function handleConfirmPassword (e)
-  // {
-  //    let confirmPasswordValue = e.target.value;
-
-  //    if (confirmPasswordValue === "" )
-  //    {
-  //        setConfirmPasswordError(true);
-
-  //    }else {
-  //        setConfirmPasswordError(false);
-  //        setConfirmPassword(confirmPasswordValue);
-  //    }
-
-  // }
-
-  //Empty DateExpiration
-  // function handleDateExpire(e) {
-  //   let dateExpirevalue = e.target.value;
-
-  //   if (dateExpirevalue === "") {
-  //     setDateExpirationError(true);
-  //   } else {
-  //     setDateExpirationError(false);
-  //     setDateExpiration(dateExpirevalue);
-  //   }
-  // }
-
-  //Empty Group ID
-  // function handleGroupId(e) {
-  //   let groupIdValue = e.target.value;
-
-  //   if (groupIdValue === "NoValue") {
-  //     setGroupIDError(true);
-  //   } else {
-  //     setGroupIDError(false);
-  //     setGroupID(groupIdValue);
-  //   }
-  // }
-
-  // Empty LockOut
-  // function handleLockOut(e) {
-  //   let lockOutValue = e.target.value;
-  //   if (lockOutValue === "NoValue") {
-  //     setLockOutError(true);
-  //   } else {
-  //     setLockOutError(false);
-  //     setLockOut(lockOutValue);
-  //   }
-  // }
 
   var newFirst = user.firstName
     .split(" ")
@@ -308,58 +204,62 @@ const AddUNewUSer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // if (
-    //   firstName === "" ||
-    //   lastName === "" ||
-    //   emailAdd === "" ||
-    //   lockOut === "NoValue" ||
-    //   groupID === "NoValue"
-    // ) {
-    //   setFirstNameError(true);
-    //   setLastNameError(true);
-    //   setEmailError(true);
-    //   //  setUserNameError(true);
-    //   //  setPasswordError(true);
-    //   //  setConfirmPasswordError(true);
-    //   setLockOutError(true);
-    //   setGroupIDError(true);
-    //   setShowResults(true);
+    if (user.firstName === "") {
+      dispatch({ type: "firstName" });
+    }
+    if (user.lastName === "") {
+      dispatch({ type: "lastName" });
+    }
+    if (user.employeeId === "") {
+      dispatch({ type: "employeeId" });
+    }
+    if (user.phoneNumber === "") {
+      dispatch({ type: "phoneNumber" });
+    }
+    if (user.emailAddress === "") {
+      dispatch({ type: "emailAddress" });
+    }
+    if (user.department === "") {
+      dispatch({ type: "department" });
+    }
+    if (user.lockOut === "") {
+      dispatch({ type: "lockOut" });
+    }
+    if (user.requestBy === "") {
+      dispatch({ type: "requestBy" });
+    } else {
+      alert("hi");
+      // const url = "http://localhost:9090/";
+      // axios
+      //   .post(`${url}api/Users/AddUsers`, data)
+      //   .then((result) => {
+      //     json(result.ResponseMessage);
 
-    //   //   <Link to={``} />
-
-    //   //  setUserPassError(true);
-    // } else {
-    //   const url = "http://192.168.6.52:9090/";
-    //   axios
-    //     .post(`${url}api/Users/AddUsers`, data)
-    //     .then((result) => {
-    //       json(result.ResponseMessage);
-
-    //       if (result.data.ResponseMessage === "User Added") {
-    //         var CryptoJS = require("crypto-js");
-    //         var ciphertext = CryptoJS.AES.encrypt(
-    //           JSON.stringify(genratedPassword),
-    //           "my-secret-key@123"
-    //         ).toString();
-    //         navigate(`/user/addusers/${ciphertext}/`, {
-    //           state: { userName: generateUsername },
-    //         });
-    //       } else if (result.data.ResponseMessage === "Existing User") {
-    //         alert("Username is Already Exist ");
-    //       } else {
-    //         alert("Looks Like Something Happens");
-    //       }
-    //     })
-    //     .catch((error) => {
-    //       alert(error);
-    //     });
-    // }
+      //     if (result.data.ResponseMessage === "User Added") {
+      //       var CryptoJS = require("crypto-js");
+      //       var ciphertext = CryptoJS.AES.encrypt(
+      //         JSON.stringify(genratedPassword),
+      //         "my-secret-key@123"
+      //       ).toString();
+      //       navigate(`/user/addusers/${ciphertext}/`, {
+      //         state: { userName: generateUsername },
+      //       });
+      //     } else if (result.data.ResponseMessage === "Existing User") {
+      //       alert("Username is Already Exist ");
+      //     } else {
+      //       alert("Looks Like Something Happens");
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     alert(error);
+      //   });
+    }
   };
 
   return (
     <>
       <div className="w-full h-full bg-gray-100 overflow-hidden">
-        <div className=" px-10  mb-10 mt-2 ml-[25%]  w-[45%] h-[98%] border bg-white border-gray-300 shadow-md  rounded-lg">
+        <div className=" px-10  mb-10 mt-2 ml-[25%]  w-[45%] h-[98%] border bg-white border-gray-300 shadow-md  rounded-lg overflow-y-scroll  scrollbar-hide  ">
           <div className="flex  ">
             <div className="flex justify-center w-[45px] h-[40px] -ml-8 mt-2  bg-gray-200  rounded-lg">
               <button
@@ -377,14 +277,14 @@ const AddUNewUSer = () => {
 
           {/* start */}
 
-          <form className=" w-full h-full">
+          <form className=" w-full h-[95%] mb-3 ">
             <div className="w-full text-center md:mb-0 shadow-2xl  ">
               <p className="text-xm text-center  font-semibold">
                 Basic Information
               </p>
             </div>
 
-            <div className="flex flex-wrap -mx-3 mb-3 ml-2 mr-2 ">
+            <div className="flex flex-wrap -mx-3 mb-2 ml-2 mr-2 ">
               <div className="w-full md:w-1/2 px-3  md:mb-0 mt-4  ">
                 <Input
                   name="firstName"
@@ -392,9 +292,10 @@ const AddUNewUSer = () => {
                   onChange={inputOnChange}
                   placeHolder="FirstName"
                   type="text"
+                  disabled="true"
                 />
                 {userData.firstNameError ? (
-                  <p className="text-red-500 text-[11px] italic ml-4 -mt-2">
+                  <p className="text-red-500 text-[10px] italic ml-4 -mt-3">
                     Please fill out the firstname.
                   </p>
                 ) : null}
@@ -408,14 +309,14 @@ const AddUNewUSer = () => {
                   type="text"
                 />
                 {userData.lastNameError ? (
-                  <p className="text-red-500 text-[11px] italic ml-4 -mt-2">
+                  <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
                     Please fill out the lastname.
                   </p>
                 ) : null}
               </div>
             </div>
 
-            <div className="flex flex-wrap -mx-3 mb-3 ml-2 mr-2 ">
+            <div className="flex flex-wrap -mx-3 mb-2 ml-2 mr-2 ">
               <div className="w-full md:w-1/2 px-3  md:mb-0   ">
                 <Input
                   name="employeeId"
@@ -425,7 +326,7 @@ const AddUNewUSer = () => {
                   type="text"
                 />
                 {userData.employeeIdError ? (
-                  <p className="text-red-500 text-[11px] italic ml-4 -mt-2">
+                  <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
                     Please fill out the Employee ID.
                   </p>
                 ) : null}
@@ -441,20 +342,20 @@ const AddUNewUSer = () => {
                 />
 
                 {userData.phoneNumberValid ? (
-                  <p className="text-red-500 text-[11px] italic ml-4 -mt-2">
+                  <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
                     Please fill valid Phone Number.
                   </p>
                 ) : null}
 
                 {userData.phoneNumberError ? (
-                  <p className="text-red-500 text-[11px] italic ml-4 -mt-2">
+                  <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
                     Please fill out the Phone Number.
                   </p>
                 ) : null}
               </div>
             </div>
 
-            <div className=" w-full px-3  mb-2 ">
+            <div className=" w-full px-3  mb-1 ">
               <div className="px-3">
                 <Input
                   name="emailAddress"
@@ -464,7 +365,7 @@ const AddUNewUSer = () => {
                   type="email"
                 />
                 {userData.emailAddressError ? (
-                  <p className="text-red-500 text-[11px] italic ml-4 -mt-2">
+                  <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
                     Please fill out the Email Address.
                   </p>
                 ) : null}
@@ -485,7 +386,7 @@ const AddUNewUSer = () => {
                   </span>
                 </div>
 
-                <div className="border border-gray-300 dropdown-menu absolute hidden text-gray-700 pt-1 w-[240px] h-[300px] ml-[70px] -mt-[80px] rounded-md">
+                <div className="border border-gray-300 dropdown-menu absolute hidden text-gray-700 pt-1 w-[240px] h-[300px] -ml-[250px] -mt-[130px] rounded-md">
                   <div className="bg-white w-full h-full ">
                     <div className="justify-center text-center mb-1">
                       Access Control
@@ -603,7 +504,7 @@ const AddUNewUSer = () => {
                   onChange={inputOnChange}
                   placeHolder="UserName"
                   type="text"
-                  disabled
+                  disabled="true"
                 />
                 {/* {userNameError? <p className="text-red-500 text-xs italic ml-4">Please fill out this field.</p>  :null} */}
               </div>
@@ -611,36 +512,41 @@ const AddUNewUSer = () => {
               <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0 mt-2">
                 <div className=" ">
                   <Select
-                    id="selectDept"
+                    name="deparment"
+                    type="select"
+                    id="department"
                     options={dataDept}
                     onChange={inputOnChange}
                   />
 
-                  {userData.groupIDError ? (
-                    <p className="text-red-500 text-[11px] italic ml-4 -mt-2">
-                      Please Select Group
+                  {userData.departmentError ? (
+                    <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
+                      Please Select Department
                     </p>
                   ) : null}
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-wrap -mx-3 mb-3 ml-2 mr-2 ">
+            <div className="flex flex-wrap -mx-3 mb-3 ml-2 mr-2 -mt-2">
               <div className="w-full md:w-1/2 px-3 ">
                 <div className="">
                   <Select
+                    name="lockOut"
+                    type="select"
+                    id="lockOut"
                     options={dataLockOut}
-                    onChange={(e) => alert(e.target.value)}
+                    onChange={inputOnChange}
                   />
 
                   {userData.lockOutError ? (
-                    <p className="text-red-500 text-[11px] italic ml-4 -mt-2">
+                    <p className="text-red-500 text-[11px] italic ml-4 -mt-3">
                       Please Select Lock Out
                     </p>
                   ) : null}
                 </div>
               </div>
-              <div className="w-full md:w-1/2 px-3 mb-1 md:mb-0 ">
+              <div className="w-full md:w-1/2 px-3  md:mb-0 ">
                 <Input
                   name="requestBy"
                   id="requestBy"
@@ -648,8 +554,8 @@ const AddUNewUSer = () => {
                   placeHolder="Requested By"
                   type="text"
                 />
-                {userData.userNameError ? (
-                  <p className="text-red-500 text-xs italic ml-4">
+                {userData.requestByError ? (
+                  <p className="text-red-500 text-xs italic ml-4 -mt-3">
                     Please fill out this field.
                   </p>
                 ) : null}
@@ -657,7 +563,7 @@ const AddUNewUSer = () => {
             </div>
             <button
               onClick={handleSubmit}
-              className="min-w-[30%] float-right mr-3 -mt-1 text-xs h-10  px-10  text-white transition-colors duration-150 bg-blue-700 rounded-full focus:shadow-outline hover:bg-blue800 justify-center tracking-widest"
+              className="min-w-[30%] float-right mr-3  text-xs h-10  px-10  text-white transition-colors duration-150 bg-blue-700 rounded-full focus:shadow-outline hover:bg-blue800 justify-center tracking-widest"
             >
               Save New User
             </button>

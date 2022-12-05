@@ -1,36 +1,52 @@
-import React from 'react'
-
+import React from "react";
 
 const SystemInfo = () => {
-	return (
-		<div className="w-[20rem] h-[22rem] bg-white p-4 rounded-sm border border-gray-200 flex flex-col border-t-4 border-0 border-gray-400">
-			<strong className="text-gray-700 font-medium">System Information</strong>
-			<div className="mt-3 w-full flex-1 text-xs">
-                <span className="text-sm text-black font-bold">Device Name</span>
-                <span className="text-basic text-black font-semibold ml-10">UIC-FG101FTK19002009</span>
-			</div>
-            <div className="mt-3 w-full flex-1 text-xs">
-                <span className="text-sm text-black font-bold">Serial Number</span>
-                <span className="text-basic text-black font-semibold ml-10">FG101FTK19002009</span>
-			</div>
-            <div className="mt-3 w-full flex-1 text-xs">
-                <span className="text-sm text-black font-bold">Framework</span>
-                <span className="text-basic text-black font-semibold ml-10">UIC-FG101FTK19002009</span>
-			</div>
-            <div className="mt-3 w-full flex-1 text-xs">
-                <span className="text-sm text-black font-bold">System Time</span>
-                <span className="text-basic text-black font-semibold ml-10">UIC-FG101FTK19002009</span>
-			</div>
-            <div className="mt-3 w-full flex-1 text-xs">
-                <span className="text-sm text-black font-bold">IP address</span>
-                <span className="text-basic text-black font-semibold ml-10">UIC-FG101FTK19002009</span>
-			</div>
-            <div className="mt-3 w-full flex-1 text-xs">
-                <span className="text-sm text-black font-bold">Processor</span>
-                <span className="text-basic text-black font-semibold ml-10">UIC-FG101FTK19002009</span>
-			</div>
-		</div>
-	)
-}
+  return (
+    <div className="h-auto w-full bg-white p-4 rounded-xl shadow-md flex flex-col gap-4 duration-100">
+      <strong className="text-black font-semibold text-[14px]">
+        System Information
+      </strong>
+      <table className="mt-3 w-[95%] h-full flex-1">
+        <tr>
+          <td className="text-[13px] text-black font-semibold">Host Name</td>
+          <td className=" text-[13px] text-black pl-3 pr-3">
+            UIC-FG10FTK190022009
+          </td>
+        </tr>
+        <tr>
+          <td className="text-[13px] text-black font-semibold">
+            Serial Number
+          </td>
+
+          <td className="text-[13px] text-black pl-3 pr-3">FG101FTK19002009</td>
+        </tr>
+        <tr>
+          <td className="text-[13px] text-black font-semibold">Framework</td>
+          <td className="text-[13px] text-black pl-3 pr-3">
+            UIC-FG101FTK19002009
+          </td>
+        </tr>
+        <tr>
+          <td className="text-[13px] text-black font-semibold">System Time</td>
+          <td className="text-[13px] text-black pl-3 pr-3">
+            UIC-FG101FTK19002009
+          </td>
+        </tr>
+        <tr>
+          <td className="text-[13px] text-black font-semibold">IP address</td>
+          <td className="text-[13px] text-black pl-3 pr-3">
+            UIC-FG101FTK19002009
+          </td>
+        </tr>
+        <tr>
+          <td className="text-[13px] text-black font-semibold">Processor</td>
+          <td className="text-[13px] text-black pl-3 pr-3">
+            UIC-FG101FTK19002009
+          </td>
+        </tr>
+      </table>
+    </div>
+  );
+};
 
 export default SystemInfo;

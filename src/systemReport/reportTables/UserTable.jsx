@@ -64,7 +64,7 @@ const UserTable = () => {
         <>
             <div className='relative'>
                 <DataTable 
-						title=""
+						title="User Access"
                         columns={columns} 
                         data={posts}
                         pagination
